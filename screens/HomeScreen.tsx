@@ -6,23 +6,16 @@ import data from "../data.json";
 import { NativeStackHeaderProps } from "@react-navigation/native-stack";
 import { FlatList } from "react-native-gesture-handler";
 import { Workout } from "../types/data";
+import WorkoutItem from "../components/WorkoutItem";
 
 export default function HomeScreen({ navigation }: NativeStackHeaderProps) {
-  const renderItem = ({ item }: { item: Workout }) => {
-    return (
-      <View>
-        <Text>{item.name}</Text>
-      </View>
-    );
-  };
-
   return (
     <View style={styles.container}>
-      {/* <Text>{JSON.stringify(data)}</Text> */}
+      <Text style={styles.header}>New Workouts</Text>
       <FlatList
         data={data as Workout[]}
         keyExtractor={(item) => item.slug}
-        renderItem={renderItem}
+        renderItem={WorkoutItem}
       />
     </View>
   );
@@ -31,5 +24,11 @@ export default function HomeScreen({ navigation }: NativeStackHeaderProps) {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
+    flex: 1,
+  },
+  header: {
+    fontSize: 20,
+    marginBottom: 20,
+    fontWeight: "bold",
   },
 });
