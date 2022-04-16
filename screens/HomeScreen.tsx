@@ -7,11 +7,13 @@ import { NativeStackHeaderProps } from "@react-navigation/native-stack";
 import { FlatList } from "react-native-gesture-handler";
 import { Workout } from "../types/data";
 import WorkoutItem from "../components/WorkoutItem";
+import UbuntuText from "../components/styled/UbuntuText";
 
 export default function HomeScreen({ navigation }: NativeStackHeaderProps) {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>New Workouts</Text>
+      <UbuntuText style={styles.header}>New Workoout</UbuntuText>
       <FlatList
         data={data as Workout[]}
         keyExtractor={(item) => item.slug}
@@ -29,6 +31,6 @@ const styles = StyleSheet.create({
   header: {
     fontSize: 20,
     marginBottom: 20,
-    fontWeight: "bold",
+    fontFamily: "Ubuntu_700Bold",
   },
 });

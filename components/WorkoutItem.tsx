@@ -19,15 +19,16 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     marginBottom: 10,
-    backgroundColor: 'white',
+    backgroundColor: "white",
   },
   name: {
     fontSize: 15,
-    fontWeight: "bold",
+    fontFamily: "Ubuntu_700Bold",
     marginBottom: 5,
   },
   duration: {
     fontSize: 15,
+    fontFamily: "Ubuntu_400Regular",
   },
-  difficulty: { fontSize: 15 },
+  difficulty: { fontSize: 15, fontFamily: "Ubuntu_400Regular" },
 });
